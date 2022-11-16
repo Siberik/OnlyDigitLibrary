@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OnlyDigitLibrary
 {
-    public class Class1
+    public class OnlyDigitLibraryClass
     {
         /// <summary>
         /// Возвращение списка всех цифр, подходящих условиям
@@ -21,8 +21,8 @@ namespace OnlyDigitLibrary
         public static List<char> GetDigit(string textString)
         {
             var text = textString.Split(' ');
-            var text2 = Array.ConvertAll(text, s => int.Parse(s));
-            text2 = text2.Where(x => x > 5).ToArray();
+            var text2 = Array.ConvertAll(text, s => int.Parse(s)).Where(x => (x==5));
+            text2 = text2.ToArray();
            var arr=text2.OfType<int>().ToList();
             var arr2=arr.OfType<char>().ToList();
             List<char> result=new List<char>(arr2);
